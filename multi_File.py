@@ -10,7 +10,7 @@ from PySide2.QtWidgets import QFileDialog
 
 from word2PDF import word2pdfs
 from excel2PDF import excel2pdfs
-from hwp2PDF import hwps2pdfs
+from hwp2PDF import hwp2pdfs
 from ppt2PDF import ppt2pdfs
 from img2PDF import img2pdfs
 
@@ -71,7 +71,7 @@ class MainView(QMainWindow):
 
         try:
             if(value == 'hwp'):
-                result = hwps2pdfs(self.fileNames,change_path(self.dirName[0]))
+                result = hwp2pdfs(self.fileNames,change_path(self.dirName[0]))
             elif(value == 'excel'):
                 result = excel2pdfs(self.fileNames,change_path(self.dirName[0]))
             elif(value == 'img'):
