@@ -39,13 +39,8 @@ class MainView(QMainWindow):
     def open_multi(self):
         self.M = multi_File.MainView()
 
-
-
-
 # 파일 경로
-
 # pyinstaller로 원파일로 압축할때 경로 필요함
-
 def resource_path(relative_path):
     if hasattr(sys, '_MEIPASS'):
         return os.path.join(sys._MEIPASS, relative_path)
