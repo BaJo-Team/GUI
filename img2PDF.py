@@ -22,7 +22,7 @@ def img2pdfs(input_file_paths, output_folder_path):
     # 선택된 파일들 하나하나 pdf로 변환
     for input_file_path in input_file_paths:
         # img -> pdf
-        output_file_name = img2pdf(input_file_path, output_folder_path)
+        output_file_name = img2pdf(change_path(input_file_path), change_path(output_folder_path))
         # 리스트에 pdf 변환된 파일 이름 추가
         output_file_names.append(output_file_name)
 

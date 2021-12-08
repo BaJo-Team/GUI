@@ -27,7 +27,6 @@ class MainView(QMainWindow):
 
         self.setCentralWidget(UI_set)
         self.setWindowTitle("파일 변환 프로그램")
-        #self.setWindowIcon(QtGui.QPixmap(resource_path("./images/jbmpa.png")))
         self.resize(500, 270)
         self.show()
 

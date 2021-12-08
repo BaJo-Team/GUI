@@ -11,6 +11,8 @@ def hwp2pdf(input_file_path, output_folder_path):
     hwp = win32.gencache.EnsureDispatch('HWPFrame.HwpObject')  # 한/글 열기
     hwnd = win32gui.FindWindow(None, '빈 문서 1 - 한글')
 
+    hwp.RegisterModule("FilePathCheckDLL", "FilePathCheckerModule")  # 한글 보안창 삭제
+
     win32gui.ShowWindow(hwnd, 0)
 
     hwp.Open(input_file_path)
@@ -25,6 +27,7 @@ def hwp2pdf(input_file_path, output_folder_path):
 
     return file_name + ".pdf"
 
+
 # 다중 변환
 def hwp2pdfs(input_file_paths, output_folder_path):
     # 리스트로 내보낼 pdf 변환된 파일 이름들
@@ -37,6 +40,7 @@ def hwp2pdfs(input_file_paths, output_folder_path):
         output_file_names.append(output_file_name)
 
     return output_file_names
+
 
 def change_path(path):
     new_path = path.replace('/', '\\')
